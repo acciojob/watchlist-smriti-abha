@@ -9,8 +9,7 @@ import java.util.List;
 @Service
 public class MovieService {
     @Autowired
-    static
-    MovieRepository movieRepository;
+    static MovieRepository movieRepository;
 
     public static void addMovie(Movie movie){
         movieRepository.addMovieInDb(movie);
@@ -25,32 +24,32 @@ public class MovieService {
     }
 
     public static Movie getMovieByName(String movie){
-        movieRepository.getMovieFromDb(movie);
-        return null;
+       return movieRepository.getMovieFromDb(movie);
+
     }
 
     public static Director getDirectorByName(String directorName){
-        movieRepository.getDirectorFromDb(directorName);
-        return null;
+        return movieRepository.getDirectorFromDb(directorName);
+
     }
 
     public static List<String> getListOfMoviesByDirectorName(String directorName){
-        movieRepository.getListOfMovieByDirectorName(directorName);
-        return null;
+        return movieRepository.getListOfMovieByDirectorName(directorName);
+
     }
 
     public List<String> getListOfMovies(){
-        movieRepository.listOfMoviesFromDb();
-        return null;
+        return movieRepository.listOfMoviesFromDb();
+
     }
 
     public void deleteDirectorByName(String directorName){
         movieRepository.deleteDirectorByNameInDb(directorName);
     }
 
-    public List<String> deleteAllDirectorAndItsMovie(){
+    public void deleteAllDirectorAndItsMovie(){
         movieRepository.deleteAllDirectorAndItsMovie();
-        return null;
+
     }
 
 }

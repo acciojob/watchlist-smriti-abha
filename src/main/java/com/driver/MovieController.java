@@ -28,43 +28,43 @@ public class MovieController {
      @PutMapping("/add-movie-director-pair")
     public ResponseEntity<String> addMovieDirectorPair
 
-             (@RequestParam String director, @RequestParam String movie){
+             (@RequestParam("director") String director, @RequestParam("movie") String movie){
          movieService.addPairOfDirectorAndMovie(director,movie);
          return new ResponseEntity<>("pair created successfully",HttpStatus.CREATED);
      }
 
      @GetMapping("/get-movie-by-name/{name}")
     public ResponseEntity<Movie> getMovieByName(@PathVariable String name){
-       Movie movie = null;
-         movie = movieService.getMovieByName(name);
+       Movie movie =movieService.getMovieByName(name);
+
          return new ResponseEntity<>(movie,HttpStatus.CREATED);
      }
 
      @GetMapping("/get-director-by-name/{name}")
     public ResponseEntity<Director> getDirectorByName(@PathVariable String name){
-         Director director=null;
-         director=movieService.getDirectorByName(name);
+         Director director=movieService.getDirectorByName(name);
+
          return new ResponseEntity<>(director,HttpStatus.CREATED);
      }
 
      @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String movie){
-         List<String> movies=null;
-         movies=movieService.getListOfMoviesByDirectorName(String.valueOf(movies));
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String director){
+         List<String>  movies=movieService.getListOfMoviesByDirectorName(director);
+
          return new ResponseEntity<>(movies,HttpStatus.CREATED);
      }
 
      @GetMapping("/get-all-movies")
             public ResponseEntity<List<String>> findAllMovies(){
-         List<String> movies=null;
-         movies=movieService.getListOfMovies();
+         List<String> movies=movieService.getListOfMovies();
+
          return new ResponseEntity<>(movies,HttpStatus.CREATED);
      }
 
      @DeleteMapping("/delete-director-by-name")
     public ResponseEntity<String> deleteDirectorByName(@RequestParam String directorName){
         movieService.deleteDirectorByName(directorName);
-        return new ResponseEntity<>("director deleted successfully",HttpStatus.OK);
+        return new ResponseEntity<>(directorName + "deleted successfully",HttpStatus.OK);
 
      }
      @DeleteMapping("/delete-all-directors")

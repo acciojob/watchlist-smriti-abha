@@ -2,9 +2,9 @@ package com.driver;
 
 public class Movie {
     //String name, int durationInMinutes, double imdbRating, no-args constructor, all-args constructor and getters-setters
-    String name;
-     int durationInMinutes;
-     double imdbRating;
+   private String name;
+    private  int durationInMinutes;
+    private double imdbRating;
 
     public Movie(){
 

@@ -9,9 +9,9 @@ import java.util.List;
 
 @Repository
 public class MovieRepository {
-    HashMap<String,Movie> movieHashMap=new HashMap<>();
-    HashMap<String,Director> directorHashMap=new HashMap<>();
-    HashMap<String, List<Movie>>pairDirectorMovieMap=new HashMap<>();
+   public HashMap<String,Movie> movieHashMap=new HashMap<>();
+  public HashMap<String,Director> directorHashMap=new HashMap<>();
+   public HashMap<String, List<Movie>>pairDirectorMovieMap=new HashMap<>();
 
     public void addMovieInDb(Movie movie){
         String key= movie.getName();
